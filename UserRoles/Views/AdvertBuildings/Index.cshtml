@@ -1,0 +1,172 @@
+﻿@model IEnumerable<UserRoles.Models.AdvertBuildings>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberFlat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlatDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlatPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LandEmail)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildingName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildingAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ZipCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BuildType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberFlat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlatDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlatPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LandEmail)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BuildDataID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BuildDataID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BuildDataID })
+            </td>
+        </tr>
+    }
+
+</table>*@
+
+
+
+<div class="row">
+    @{foreach (var x in Model.Select(n => n.BuildType).Distinct())
+        {
+
+            <h3>Room Type :@x</h3>
+      <br />
+            <div>
+                <table class="table">
+                    <div class="w3-container">
+                        @foreach (var item in Model.Where(a => a.BuildType.Equals(@x)))
+                        {
+                            <div class="col-10 mx-auto my-3 col-md-6 col-lg-4">
+                                <div class="card car-card">
+
+                                    <div class="row" style="text-align: center;padding-top:5px">
+                                        @if (item.image != null)
+                                        {
+                                            var base64 = Convert.ToBase64String(inArray: item.image);
+                                            var imgSrc = string.Format(format: "data:image/gif;base64,{0}", arg0: base64);
+                                            <img src="@imgSrc" width="200" height="130" />
+                                        }
+                                    </div>
+                                    <!--card body-->
+                                    <div class="card-body">
+                                        <div class="car-info d-flex justify-content-between">
+                                            <!--first  flex child-->
+                                            <h5 class="car-value align-self-centre py-2 px3">
+                                                BUilding Name - <span class="car-price">@Html.DisplayFor(modelItem => item.BuildingName)</span>
+                                            </h5>
+                                            <!--second  flex child-->
+                                            <h5 class="car-value align-self-centre py-2 px3">
+                                                Address - <span class="car-price">@Html.DisplayFor(modelItem => item.BuildingAddress)</span>
+                                            </h5>
+                                            <!--second  flex child-->
+                                            <h5 class="car-value align-self-centre py-2 px3">
+                                                City - <span class="car-price">@Html.DisplayFor(modelItem => item.City)</span>
+                                            </h5>
+                                            <!--second  flex child-->
+                                            <h5 class="car-value align-self-centre py-2 px3">
+                                                Short-Description - <span class="car-price">@Html.DisplayFor(modelItem => item.FlatDescription)</span>
+                                            </h5>
+                                            <!--second  flex child-->
+                                            <h5 class="car-value align-self-centre py-2 px3">
+                                                Flat Price - <span class="car-price">@Html.DisplayFor(modelItem => item.FlatPrice)</span>
+                                            </h5>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="w3-section">
+
+                                        @Html.ActionLink("Rent Now", "Create", "Rents", new { id = item.BuildDataID }, new { @class = "btn btn-info" })
+                                        @Html.ActionLink("Make Appointment", "Create", "Appointments", new { id = item.BuildDataID }, new { @class = "btn btn-info" })
+                                    </div>
+
+                                    <hr />
+                                </div>
+                         </div>
+                        }
+                    </div>
+
+                </table>
+            </div>
+        }
+    }
+</div>
+
+
+    

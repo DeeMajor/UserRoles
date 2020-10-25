@@ -1,0 +1,66 @@
+﻿@model UserRoles.Models.Rent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Check_In)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Check_In)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Check_Out)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Check_Out)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumMonths)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumMonths)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Instalments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instalments)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RentalId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/css/owl.theme.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="~/css/tooplate-style.css">
+
+
+</head>
+<body>
+
+
+
+
+
+    <!-- PRE LOADER -->
+    <div class="preloader">
+        <div class="spinner">
+            <span class="sk-inner-circle"></span>
+        </div>
+    </div>
+
+
+    <!-- MENU -->
+    <div class="navbar custom-navbar navbar-fixed-top" role="navigation">
+        <div class="container">
+
+            <!-- NAVBAR HEADER -->
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+                    <span class="icon icon-bar"></span>
+
+                </button>
+
+
+
+                <!-- lOGO -->
+                <div class="col-md-offset-1 col-md-pull-10 col-sm-12">
+                    <a href="index.html" class="navbar-brand">NASA</a>
+                </div>
+
+            </div>
+
+            <!-- MENU LINKS -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, new { @area = "" })</li>
+                    <li>@Html.ActionLink("About", "About", "Home", null, new { @area = "" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @area = "" })</li>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+
+                            <li>@Html.ActionLink("Advertisement", "Index", "AdvertBuildings", null, new { @area = "" })</li>
+                            <li>@Html.ActionLink("Add Agent", "Create", "Agents", null, new { @area = "" })</li>
+                            <li>@Html.ActionLink("View Agents", "Index", "Agents", null, new { @area = "" })</li>
+                            <li>@Html.ActionLink("Approve Buildings", "Index", "Images", null, new { @area = "" })</li>
+                            <li>@Html.ActionLink("Approve Appointments", "Index", "Appointments", null, new { @area = "" })</li>
+                        }
+                        if (User.IsInRole("Student"))
+
+                        {
+                            <li>@Html.ActionLink("Advertisement", "Index", "AdvertBuildings", null, new { @area = "" })</li>
+                            <li>@Html.ActionLink("Rent", "Create", "Rents", null, new { @area = "" })</li>
+                            <li>@Html.ActionLink("Make Appointments", "Create", "Appointments", null, new { @area = "" })</li>
+                            <li>@Html.ActionLink("View Appointments", "Index", "Confirm_Appointment", null, new { @area = "" })</li>
+
+                        }
+                        if (User.IsInRole("Agent"))
+                        {
+                            <li>@Html.ActionLink("Appointments", "Index", "Appointments", null, new { @area = "" })</li>
+                            <li>@Html.ActionLink("Approve Appointments", "Index", "Appointments", null, new { @area = "" })</li>
+
+
+                        }
+                        if (User.IsInRole("Landlord"))
+                        {
+                            <li>@Html.ActionLink("Advertisement", "Index", "AdvertBuildings", null, new { @area = "" })</li>
+                            <li>@Html.ActionLink("Register Building", "Create", "RegBuilds", null, new { @area = "" })</li>
+                            <li>@Html.ActionLink("Building Status", "Index", "Images", null, new { @area = "" })</li>
+                        }
+                    }
+
+                </ul>
+            </div>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+
+
+
+
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-5 col-sm-6">
+                    <h2>Book an Appointment</h2>
+                    <p>You can book to view a room on this website<br> All you need to do is select the room <br> that you would like to view and then enter <br> your appointment information. </p>
+
+
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="footer-info">
+                        <h2>Keep in touch</h2>
+                        <p><a href="tel:031 583 4256">031 583 4256</a></p>
+                        <p><a href="mailto:info@nasa.com">info@nasa.com</a></p>
+
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-12">
+
+                    <h2>Our Offices</h2>
+                    <p>21 Henwood Road <br /> Berea, Windermere <br /> Durban <br /> 4000</p>
+                    <ul class="social-icon">
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-instagram"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+                <div class="col-md-12 col-sm-12">
+                    <div class="copyright-text">
+                        <p>
+                            Copyright © 2020 NASA
+
+                            | Design: NASA
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    @if (IsSectionDefined("scripts"))
+    {
+        RenderSection("scripts");
+    }
+
+
+    <!-- SCRIPTS -->
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.parallax.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/js/magnific-popup-options.js"></script>
+    <script src="~/js/modernizr.custom.js"></script>
+    <script src="~/js/smoothscroll.js"></script>
+    <script src="~/js/custom.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿@model IEnumerable<UserRoles.Models.BuildingAppicationVM>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildingAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BuildType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumberFlat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlatDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FlatPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildingAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ZipCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BuildType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumberFlat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlatDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FlatPrice)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BuildingAppicationVM_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BuildingAppicationVM_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BuildingAppicationVM_Id })
+        </td>
+    </tr>
+}
+
+</table>

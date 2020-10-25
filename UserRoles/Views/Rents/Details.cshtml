@@ -1,0 +1,90 @@
+﻿@model UserRoles.Models.Rent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Rent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdvertBuildings.BuildingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdvertBuildings.BuildingName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Check_In)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Check_In)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Check_Out)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Check_Out)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumMonths)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumMonths)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Instalments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Instalments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlatDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlatDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlatType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlatType)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RentalId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

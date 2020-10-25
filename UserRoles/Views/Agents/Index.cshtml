@@ -1,0 +1,52 @@
+﻿@model IEnumerable<UserRoles.Models.Agent>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.AgentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.describtion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.image)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.AgentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.describtion)
+        </td>
+        <td>
+            <div class="row" style="text-align: center;padding-top:5px">
+                @if (item.image != null)
+                {
+                    var base64 = Convert.ToBase64String(inArray: item.image);
+                    var imgSrc = string.Format(format: "data:image/gif;base64,{0}", arg0: base64);
+                    <img src="@imgSrc" width="200" height="130" />
+                }
+            </div>
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AgentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AgentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AgentId })
+        </td>
+    </tr>
+}
+
+</table>

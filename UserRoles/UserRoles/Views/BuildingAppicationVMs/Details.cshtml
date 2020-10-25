@@ -1,0 +1,106 @@
+﻿@model UserRoles.Models.BuildingAppicationVM
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BuildingAppicationVM</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildingName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuildingName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildingAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuildingAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ZipCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ZipCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BuildType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BuildType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumberFlat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumberFlat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlatDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlatDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FlatPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FlatPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.image)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.image)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Image_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Image_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.BuildingAppicationVM_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
