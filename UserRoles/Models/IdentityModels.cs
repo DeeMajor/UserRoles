@@ -56,5 +56,8 @@ namespace UserRoles.Models
         public DbSet<Confirm_Appointment>ConfirmAppointments { get; set; }
         public  DbSet<RegBuild>Regbuilds { get; set; }
 
+        public System.Data.Entity.DbSet<UserRoles.Models.ApplicationStatus> ApplicationStatus { get; set; }
+
+        public System.Data.Entity.DbSet<UserRoles.Models.Application> Applications { get; set; }
     }
 }

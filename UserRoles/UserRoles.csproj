@@ -175,6 +175,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdvertBuildingsController.cs" />
     <Compile Include="Controllers\AgentsController.cs" />
+    <Compile Include="Controllers\ApplicationsController.cs" />
+    <Compile Include="Controllers\ApplicationStatusController.cs" />
     <Compile Include="Controllers\AppointmentsController.cs" />
     <Compile Include="Controllers\Confirm_AppointmentController.cs" />
     <Compile Include="Controllers\GuestsController.cs" />
@@ -194,6 +196,8 @@
     <Compile Include="Models\AdminViewModel.cs" />
     <Compile Include="Models\AdvertBuildings.cs" />
     <Compile Include="Models\Agent.cs" />
+    <Compile Include="Models\Application.cs" />
+    <Compile Include="Models\ApplicationStatus.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Confirm Appointment.cs" />
     <Compile Include="Models\Guest.cs" />
@@ -481,6 +485,17 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Applications\Create.cshtml" />
+    <Content Include="Views\Applications\Delete.cshtml" />
+    <Content Include="Views\Applications\Details.cshtml" />
+    <Content Include="Views\Applications\Edit.cshtml" />
+    <Content Include="Views\Applications\Index.cshtml" />
+    <Content Include="Views\ApplicationStatus\Create.cshtml" />
+    <Content Include="Views\ApplicationStatus\Delete.cshtml" />
+    <Content Include="Views\ApplicationStatus\Details.cshtml" />
+    <Content Include="Views\ApplicationStatus\Edit.cshtml" />
+    <Content Include="Views\ApplicationStatus\Index.cshtml" />
+    <Content Include="Views\Applications\CustIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

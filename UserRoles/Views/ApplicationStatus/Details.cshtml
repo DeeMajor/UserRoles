@@ -1,0 +1,27 @@
+﻿@model UserRoles.Models.ApplicationStatus
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ApplicationStatus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Application_status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Application_status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.StatusID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

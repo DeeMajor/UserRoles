@@ -157,10 +157,10 @@
     </footer>
 
     @if (IsSectionDefined("scripts"))
-    {
-        RenderSection("scripts");
-    }
-
+        {
+            @RenderSection("scripts");
+        }
+    @*@RenderSection("scripts")*@
 
     <!-- SCRIPTS -->
 
